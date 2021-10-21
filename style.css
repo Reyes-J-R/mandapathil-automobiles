@@ -1,0 +1,523 @@
+
+#dtframe {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+#time-text {
+    font-size: 100px;
+    margin-bottom: 0px;
+}
+
+#time-p-label {
+    padding-top: 50px;
+    font-size: 30;
+}
+
+#date-text {
+    font-size: 30px;
+    padding-left: 3px;
+}
+
+#day-text {
+    padding-left: 3px;
+}
+
+#toolframe {
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#dashboard-tool1, #dashboard-tool2, #dashboard-tool3 {
+    border: 1px solid #9999ff;
+    border-collapse: separate;
+    padding: 10px;
+    margin: 0;
+    background-color: #9999ff;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 15px;
+
+}
+
+#dashboard-tool1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#dashboard-tool3 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#entrysection-heading, #ordersection-heading, #statsection-heading, #stocksection-heading{
+    font-family: 'Righteous';
+    font-size: 30px;
+    color: #5555ff;
+    border-radius: 0px;
+    border-bottom: 1px solid #1111ff;
+    /*text-decoration-line: underline;*/
+}
+
+#dashboard-entrysection{
+    border: 2px solid #9999ff;
+    border-radius: 20px;
+}
+
+#dashboard-ordersection, #dashboard-statsection, #dashboard-stocksection {
+    border: 2px solid #9999ff;
+    border-radius: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 22px;
+    margin-top: 10px;
+}
+
+
+
+#dashboard-stocksection {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#dashboard-entrysection-sub1,
+#dashboard-entrysection-sub2,
+#dashboard-ordersection-sub1,
+#dashboard-statsection-sub1,
+#dashboard-stocksection-sub1,
+#dashboard-stocksection-sub2{
+    /*border: 1px solid #9999ff;*/
+    text-align: center;
+    border-radius: 30px;
+    padding: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 170px;
+    
+}
+
+#dashboard-entrysection-sub1,
+#dashboard-entrysection-sub2 {
+    margin: 30px;
+}
+
+#dashboard-stocksection-sub1,
+#dashboard-stocksection-sub2 {
+    margin: 10px;
+}
+
+#dashboard-ordersection-sub1, #dashboard-statsection-sub1 {
+    margin: 7px;
+}
+
+#dashboard-entrysection-label-sub1,
+#dashboard-entrysection-label-sub2,
+#dashboard-ordersection-label-sub1,
+#dashboard-statsection-label-sub1,
+#dashboard-stocksection-label-sub1,
+#dashboard-stocksection-label-sub2 {
+    font-family: 'Oswald';
+    font-size: 20px;
+    color: #5555ff;
+    text-align: center;
+    border-top: 5px;
+}
+
+QFrame::hover#dashboard-entrysection-sub1, QFrame::hover#dashboard-entrysection-sub2 {
+    /*border: 2px solid #7777ff;*/
+    background-color: #eaeaea;
+}
+
+QFrame::hover#dashboard-statsection-sub1, QFrame::hover#dashboard-ordersection-sub1 {
+    /*border: 2px solid #7777ff;*/
+    background-color: #eaeaea;
+}
+
+QFrame::hover#dashboard-stocksection-sub1, QFrame::hover#dashboard-stocksection-sub2 {
+    /*border: 2px solid #7777ff;*/
+    background-color: #eaeaea;
+}
+
+/*___________________ Entry Window ___________________*/
+
+
+#entrylistframe {
+    background-color: #efefff;
+    padding-top: 0px;
+    padding-top: 5px;
+    border-right: 1px solid #cfcfff;
+}
+
+#entrylistarea {
+    background-color: #efefff;
+    margin: 0px;
+    /*border-right: 1px solid #5555ff;*/
+    /*border-right: 2px solid #cccccc;*/
+}
+
+#entrylist-heading-frame {
+    background-color: #efefff;
+    min-width: 300px;
+    /*padding-right: 20px;*/
+}
+
+/*#entrylist-heading {
+    font-family: 'Righteous';
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    border-radius: 0px;
+    background-color: #5555ff;
+}*/
+
+#entrylist-searchbar {
+    border: 1px solid #55f;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#entrylist-add-btn, #entrylist-remove-btn {
+    padding: 9px;
+    padding-right: 15px;
+    /*border: 1px solid #55f;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+}
+
+#entrylist-add-btn {
+    background:  url("icons/plus_1.png");
+}
+
+#entrylist-remove-btn {
+    background: url("icons/minus_1.png");
+}
+
+#entrylistitem {
+    border-right: 1px solid #55f;
+    border-bottom: 1px solid #55f;
+    margin: 2px;
+    margin-right: 0px;
+    margin-left: 0px;
+    /*border-radius: 10px;*/
+    background-color: #f9f9f9;
+    color: black;
+}
+
+#entrylistarea-vscrollbar {
+    border: 0px;
+    max-width: 5px;
+    background: #7777ff solid;
+
+}
+
+#entrylistarea-vscrollbar::handle {
+    background-color: #eee;
+    border-radius: 2px;
+}
+
+#entrylistarea-vscrollbar::add-page {
+    background: #fff;
+}
+
+#entrylistarea-vscrollbar::sub-page {
+    background: #fff;
+}
+
+#entrylistitem-vname {
+    font-family: 'Barlow';
+    font-size: 20px;
+    font-weight: 500;
+    color: #55f;
+}
+
+#entrylistitem-vnum {
+    font-family: 'Barlow';
+    font-size: 17px;
+    font-weight: 100;
+    color: #999;
+}
+
+#entrylistitem-vdate {
+    font-family: 'Barlow';
+    font-size: 15px;
+    font-weight: 100;
+    color: brown;
+}
+
+#entrylistitem::hover {
+    background-color: #f5f5ff;
+}
+
+/*_____________________ New Entry Window _________________*/
+
+#new-entry-widget {
+    background-color: #efefff;
+    border: 0px;
+}
+
+#new-entry-heading {
+    font-family: 'Oswald';
+    font-size: 25px;
+    text-align: center;
+    color: #55f;
+    border-radius: 0px;
+    border-bottom: 1px solid blue;
+    margin-bottom: 10px;
+}
+
+#new-entry-vname-label,
+#new-entry-vnum-label, 
+#new-entry-cinfo-label, 
+#new-entry-date-label {
+    font-size: 16px;
+    font-family: "Righteous";
+    color: #333399;
+
+}
+
+#new-entry-vname-edit,
+#new-entry-vnum-edit,
+#new-entry-cinfo-edit, 
+#new-entry-date-edit {
+    background-color: #f5f5ff;
+    border: 1px solid #55f;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Barlow';
+}
+
+#new-entry-create-button {
+    border: 1px solid #0c0;
+    background-color: #22f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+/*________________________ EntryShow ___________________*/
+
+#entryshowframe {
+    /*background-color: white;*/
+    margin: 0px;
+    padding-left: 50px;
+    background-color: #efefff;
+}
+
+#vname-heading {
+    font-size: 40px;
+    color: #5555ff;
+    font-family: 'Righteous';
+}
+
+#vnum-heading {
+    font-size: 20px;
+    color: #000;
+    font-family: 'Righteous';
+}
+
+#items-heading {
+    font-size: 30px;
+    color: #55f;
+    font-family: 'Oswald';
+    border-radius: 0px;
+    border-bottom: 1px solid #55f;
+    font-weight: 500;
+}
+
+#item-search-bar {
+    font-size: 20px;
+    border: 1px solid #55f;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: monospace;
+    color: #666;
+}
+
+#item-add-button, #item-delete-button {
+    border: 1px solid #55f;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    background-image: url("icons/item_add.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#item-delete-button {
+    background-image: url("icons/item_delete.png");
+}
+
+
+#items-table-vscrollbar {
+    max-width: 2px;
+}
+
+
+#entry-checkout-button {
+    padding: 10px;
+    color: white;
+    background-color: #5555ff;
+    border: 1px double #008800;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/*#items-table-vscrollbar::sub-page, #items-table-vscrollbar::add-page {
+    background-color: #;
+}   */
+
+QTableView {
+    selection-color: black;
+    border: 1px solid #efefef;
+    text-align: center;
+    outline: 0;
+    border-radius: 5px;
+    background-color: #efefff;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #cfcfff;
+    padding-bottom: 40px;
+}
+
+QTableView::item {
+    /*border: 1px solid #bbbbbb;*/
+    /*border-radius: 5px;*/
+    background-color: #efefff;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-weight: 100;
+}
+
+QTableView::item:selected {
+    border: 1px solid #55f; 
+}
+
+QTableView::item:hover {
+    background-color: #f5f5f5;
+}
+
+
+QTableCornerButton::section {
+    background-color: #efefff;
+}
+
+QHeaderView::section {
+    background-color: #efefff;
+    color: #55a;
+    border: 0px solid #55f;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 17px;
+    margin-left: 30px;
+}
+
+QHeaderView {
+    background-color: #efefff;
+}
+
+
+/*_______________________ Items Window _________________________*/
+
+#itemswindow-heading {
+    font-size: 20px;
+    color: brown;
+    border-radius: 0px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid brown;
+}
+
+#itemswindow-searchbar {
+    border: 1px solid maroon;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #500;
+}
+
+#itemswindow-item-add-button, #itemswindow-item-remove-button {
+    border-radius: 5px;
+    padding: 7px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#itemswindow-item-add-button {
+    border: 1px solid green;
+    /*background-image: url("./icons/plus_1.png");*/
+}
+
+#itemswindow-item-remove-button {
+    border: 1px solid red;
+    /*background-image: url("./icons/minus_1.png");*/
+}
+
+#itemswindow-itemslist {
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid maroon;
+    padding-left: 3px;
+    font-weight: 550;
+}
+
+#itemswindow-itemslist::item {
+    padding: 1px;
+}
+
+#itemswindow-itemslist::item:hover {
+    background-color: rgba(200, 0, 0, 0.05);
+    border: 1px solid rgba(200, 0, 0, 0.1);
+}
+
+#itemswindow-itemslist::item:selected {
+    color: black;
+    outline: 0px;
+}
+
+#itemswindow-itemslist::item:focus {
+    background-color: rgba(200, 0, 0, 0.09);
+    border: 1px solid rgba(200, 0, 0, 0.1);
+
+}
+
+/*#pop-item-dialogframe {
+    /*bo: 1px solid black;*/
+
+
+#item-add-namefield {
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid maroon;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+#item-add-confirm-btn, #item-add-cancel-btn {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+#item-add-confirm-btn {
+    background-color: green;
+    color: white;
+}
+
+#item-add-cancel-btn {
+    background-color: red;
+    color: white;
+}
