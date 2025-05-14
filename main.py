@@ -8,8 +8,7 @@ import datetime
 import json
 import random
 from threading import Thread
-
-from package import DataMethods, Window, DashBoard, EntryListItem, EntryShowFrame, NewEntryWindow, ActiveEntries, SubWindow, ItemsWindowLayout, StockWindowLayout
+from package import *
 
 # from win32api import GetSystemMetrics
 
@@ -44,15 +43,23 @@ new_entry_window.hide()
 itemswindow = SubWindow("Items")
 items_window_layout = ItemsWindowLayout()
 itemswindow.setLayout(items_window_layout)
-itemswindow.setGeometry(430, 150, 600, 500)
+# itemswindow.setGeometry(430, 150, 600, 500)
+itemswindow.setFixedSize(screen_rect.width() - 10, screen_rect.height()-70)
 
 
-# stockwindow = SubWindow("Stock")
-# stock_window_layout = StockWindowLayout
-# stockwindow.setLayout(stock_window_layout)
-# stockwindow.setFixedSize(screen_rect.width() - 10, screen_rect.height()-70)
+stockwindow = SubWindow("Stock")
+stock_window_layout = StockWindowLayout()
+stockwindow.setLayout(stock_window_layout)
+stockwindow.setFixedSize(screen_rect.width() - 10, screen_rect.height()-70)
 
-dashboard = DashBoard(active_entrywindow, active_entries, itemswindow)
+entryhistorywindow = SubWindow("Entries")
+entryhistorylayout = EntryHistoryLayout()
+entryhistorywindow.setLayout(entryhistorylayout)
+
+
+dashboard = DashBoard(active_entrywindow, active_entries, itemswindow, stockwindow, entryhistorywindow)
 layout.addWidget(dashboard)
 
-sys.exit(app.exec_())
+
+# app.setStyle("fusion")
+app.exec_()

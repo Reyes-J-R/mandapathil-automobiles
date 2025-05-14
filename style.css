@@ -203,14 +203,17 @@ QFrame::hover#dashboard-stocksection-sub1, QFrame::hover#dashboard-stocksection-
 }
 
 #entrylistitem {
-    border-right: 1px solid #55f;
-    border-bottom: 1px solid #55f;
+    border: 1px solid #ddd;
     margin: 2px;
     margin-right: 0px;
     margin-left: 0px;
     /*border-radius: 10px;*/
     background-color: #f9f9f9;
     color: black;
+}
+
+#entrylistitem::hover {
+    background-color: #aaa;
 }
 
 #entrylistarea-vscrollbar {
@@ -255,7 +258,7 @@ QFrame::hover#dashboard-stocksection-sub1, QFrame::hover#dashboard-stocksection-
 }
 
 #entrylistitem::hover {
-    background-color: #f5f5ff;
+    background-color: #eee;
 }
 
 /*_____________________ New Entry Window _________________*/
@@ -337,13 +340,33 @@ QFrame::hover#dashboard-stocksection-sub1, QFrame::hover#dashboard-stocksection-
     font-weight: 500;
 }
 
-#item-search-bar {
-    font-size: 20px;
+#item-select-box, #part-select-box, #item-price-box {
+    font-size: 17px;
     border: 1px solid #55f;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     padding: 5px;
-    font-family: monospace;
-    color: #666;
+    font-family: 'Barlow';
+    font-weight: 800;
+    color: #00a;
+}
+
+#part-select-box QAbstractItemView, #item-select-box QAbstractItemView {
+    color: #55f;
+    background-color: white;
+    selection-background-color:  #55f;
+    selection-color: white;
+}
+
+/*#item-select-box QAbstractItemView {
+    color: #55f;
+    background-color: white;
+    selection-background-color:  #55f;
+    selection-color: white;
+}*/
+
+#item-price-box {
+    border-radius: 10px;
 }
 
 #item-add-button, #item-delete-button {
@@ -376,11 +399,7 @@ QFrame::hover#dashboard-stocksection-sub1, QFrame::hover#dashboard-stocksection-
     border-radius: 5px;
 }
 
-/*#items-table-vscrollbar::sub-page, #items-table-vscrollbar::add-page {
-    background-color: #;
-}   */
-
-QTableView {
+#entryshowframe QTableView {
     selection-color: black;
     border: 1px solid #efefef;
     text-align: center;
@@ -393,41 +412,85 @@ QTableView {
     padding-bottom: 40px;
 }
 
-QTableView::item {
-    /*border: 1px solid #bbbbbb;*/
-    /*border-radius: 5px;*/
+#entryshowframe QTableView::item {
     background-color: #efefff;
-    padding-left: 10px;
-    padding-top: 5px;
     font-weight: 100;
+    color: #33f;
 }
 
-QTableView::item:selected {
+#entryshowframe QTableView::item:selected {
     border: 1px solid #55f; 
 }
 
-QTableView::item:hover {
+#entryshowframe QTableView::item:hover {
     background-color: #f5f5f5;
 }
 
 
-QTableCornerButton::section {
+#entryshowframe QTableCornerButton::section {
     background-color: #efefff;
 }
 
-QHeaderView::section {
+#entryshowframe QHeaderView::section {
     background-color: #efefff;
     color: #55a;
     border: 0px solid #55f;
     font-weight: 500;
     padding: 5px;
     font-size: 17px;
-    margin-left: 30px;
 }
 
-QHeaderView {
+#entryshowframe QHeaderView {
     background-color: #efefff;
 }
+
+#entry-item-increment-button, #entry-item-decrement-button, #entry-item-delete-button {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#entry-item-increment-button {
+    color: green;
+    border: 1px solid green;
+    font-weight: 800;
+    font-size: 16;
+}
+
+#entry-item-decrement-button {
+    color: darkorange;
+    border: 1px solid darkorange;
+    font-size: 20px;
+}
+
+#entry-item-delete-button {
+    color: red;
+    border: 1px solid red;
+}
+
+#entry-item-increment-button::hover {
+    background-color: green;
+    color: white;
+}
+
+#entry-item-decrement-button::hover {
+    background-color: darkorange;
+    color: white;
+}
+
+#entry-item-delete-button::hover {
+    background-color: red;
+    color: white;
+}
+
+#entry-checkout-result-window {
+    border: 1px solid #ccc;
+}
+
+#entry-checkout-result-text {
+    font-size: 20px;
+    color: red;
+}
+
 
 
 /*_______________________ Items Window _________________________*/
@@ -440,13 +503,19 @@ QHeaderView {
     border-bottom: 1px solid brown;
 }
 
-#itemswindow-searchbar {
+#itemswindow-searchbar, #itemswindow-typebox {
     border: 1px solid maroon;
     border-radius: 5px;
     padding: 5px;
     font-size: 15px;
     font-weight: 800;
     color: #500;
+}
+
+#itemswindow-typebox::drop-down {
+    background: url("icons/down_arrow_1.png");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #itemswindow-item-add-button, #itemswindow-item-remove-button {
@@ -472,30 +541,24 @@ QHeaderView {
     border: 1px solid maroon;
     padding-left: 3px;
     font-weight: 550;
+    outline: 0;
 }
 
-#itemswindow-itemslist::item {
-    padding: 1px;
-}
 
-#itemswindow-itemslist::item:hover {
-    background-color: rgba(200, 0, 0, 0.05);
-    border: 1px solid rgba(200, 0, 0, 0.1);
+QListView::item {
+    outline: 0;
 }
 
 #itemswindow-itemslist::item:selected {
     color: black;
-    outline: 0px;
+    border: 0px;
+    background-color: #eef;
 }
 
 #itemswindow-itemslist::item:focus {
-    background-color: rgba(200, 0, 0, 0.09);
-    border: 1px solid rgba(200, 0, 0, 0.1);
+    background-color: #ddf;
 
 }
-
-/*#pop-item-dialogframe {
-    /*bo: 1px solid black;*/
 
 
 #item-add-namefield {
@@ -521,3 +584,238 @@ QHeaderView {
     background-color: red;
     color: white;
 }
+
+/*________________________STOCK WINDOW__________________________-*/
+
+
+#stock-list-frame {
+    background-color: rgba(200, 200, 200, 0.2);
+}
+
+#stock-list-search {
+
+}
+
+#stock-item {
+    background-color: rgba(200, 200, 200, 0.2);
+    margin: 0px;
+}
+
+#stock-item::hover {
+    background-color: rgba(200, 200, 200, 0.5)
+}
+
+#stock-item-area {
+    padding: 0px;
+}
+
+#stock-items-container {
+    padding-right: 0px;
+}
+
+#stock-itemarea-vscrollbar {
+
+}
+
+
+#stock-item-name {
+    color: #4444ff;
+    font-family: "Barlow";
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#stock-item-count {
+    color: #4444ff;
+    font-family: "Barlow";
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/*#stock-show-frame {
+    border: 1px solid black;
+}*/
+
+#stock-item-search, #stock-list-search {
+    border: 1px solid #5555ff;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+
+#stock-item-add-button {
+    background: url("./icons/plus_1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 9px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#stock-add-vbox, #stock-add-idbox, #stock-add-quantitybox, #stock-add-brandbox, #stock-add-basepricebox, #stock-add-mrpbox {
+    padding: 3px;
+    border: 1px solid black;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+#stock-add-addbutton, #stock-add-cancelbutton {
+    background-color: #55f;
+    border: 1px solid #44f;
+    border-radius: 5px;
+    color: white;
+}
+
+#stock-show-frame QTableView {
+    outline: 0;
+    font-size: 15px;
+    font-weight: 600;
+    outline: 0;
+}
+
+#stock-show-frame QTableView::item {
+    outline: 0;
+    background-color: transparent;
+    border: 0px;
+    color: #55f;
+}
+
+#stock-show-frame QTableView::item:hover {
+    border: 1px solid blue;
+}
+
+#stock-show-frame QHeaderView::section {
+    color: maroon;
+    background-color: #efefff;
+    font-weight: 1000;
+    border: 0px;
+    padding-left: 10px;
+    max-width: 10px;
+}
+
+#stock-show-frame QHeaderView::section:pressed {
+    background-color: red;
+    color: white;
+}
+
+#stock-item-increment-button, #stock-item-decrement-button, #stock-item-delete-button {
+    padding: 10px;
+    border: 1px solid;
+    font-size: 25;
+    font-weight: 700;
+    outline: 0;
+}
+
+#stock-item-delete-button {
+    border-color: red;
+    color: red;
+}
+
+#stock-item-increment-button {
+    border-color: green;
+    color: green;
+}
+
+#stock-item-decrement-button {
+    border-color: orange;
+    color: orange;
+    font-size: 25px;
+}
+
+#stock-item-increment-button::hover {
+    background-color: lightgreen;
+    color: darkgreen;
+}
+
+#stock-item-decrement-button::hover {
+    background-color: orange;
+    color: white;
+}
+
+#stock-item-delete-button::hover {
+    background-color: red;
+    color: white;
+}
+
+/*_______________________ EntryHistory________________________*/
+
+#entryhistorylistitem {
+    border: 1px solid #ddd;
+}
+
+#entryhistorylistitem-vname {
+    color: #44f;
+    font-size: 20px;
+    font-family: "Oswald";
+}
+
+#entryhistorylistitem-vnum {
+    color: #555;
+    font-size: 17px;
+}
+
+#entryhistorylistitem-date {
+    color: #555;
+    font-size: 16px;
+}
+
+#entryhistorylistitem-itemcount, #entryhistorylistitem-totalamount {
+    color: #555;
+    font-size: 20px;
+}
+
+
+#entryhistoryshow-heading, #entryhistoryshow-itemsheading {
+    font-size: 20px;
+    color: #44f;
+    font-family: "righteous";
+    border-radius: 0px;
+    border-bottom: 1px solid #44f;
+}
+
+
+#entryhistoryshow-vname_key,
+#entryhistoryshow-vnum_key,
+#entryhistoryshow-cinfo_key,
+#entryhistoryshow-date_key,
+#entryhistoryshow-time_key,
+#entryhistoryshow-itemcount_key,
+#entryhistoryshow-totalamount_key {
+    color: #44f;
+    font-size: 18px;
+    font-family: "Oswald";
+}
+
+
+#entryhistoryshow-vname_val,
+#entryhistoryshow-vnum_val,
+#entryhistoryshow-cinfo_val,
+#entryhistoryshow-date_val,
+#entryhistoryshow-time_val,
+#entryhistoryshow-itemcount_val,
+#entryhistoryshow-totalamount_val {
+    color: #555;
+    font-size: 18px;
+    font-family: "Oswald";
+}
+
+#entryhistoryshow-table {
+    outline: 0px;
+    font-size: 20px;
+    font-family: "Barlow";
+    color: #55f;
+    font-weight: 300;
+}
+
+#entryhistoryshow QTableView::item {
+    border: 0;
+    padding: 10px;
+}
+
+#entryhistoryshow QHeaderView::section {
+    font-size: 15px;
+    color: maroon;
+    font-weight: 500;
+}
+
+
