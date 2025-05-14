@@ -1,0 +1,3 @@
+PtQt5
+Pillow
+json
